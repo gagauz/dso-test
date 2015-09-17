@@ -29,14 +29,7 @@ public class BigData implements Serializable {
 
     @Locked
     public synchronized void setName(String name) {
-        System.out.println("setName1 " + name);
-        synchronized (this) {
-            System.out.println("setName2 " + name);
-            if ("".equals(name)) {
-                throw new RuntimeException();
-            }
-            this.name = name;
-        }
+        this.name = name;
     }
 
     public BigData getParent() {

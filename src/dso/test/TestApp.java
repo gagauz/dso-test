@@ -10,5 +10,6 @@ public class TestApp {
             IllegalArgumentException, IllegalAccessException {
         BigData bigData = new BigData();
         System.out.println(bigData);
+        bigData.setName("new Name");
     }
 }
