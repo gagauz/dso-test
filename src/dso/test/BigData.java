@@ -2,13 +2,14 @@ package dso.test;
 
 import dso.annotation.Locked;
 import dso.annotation.Shared;
+import dso.object.DSObject;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 @Shared
-public class BigData implements Serializable {
+public class BigData implements Serializable, DSObject {
 
     private static int counter = 1;
 
@@ -88,5 +89,10 @@ public class BigData implements Serializable {
         // sb.append("children=").append(children).append(">\n");
         // return sb.toString();
         return this.getClass().getName() + "#" + hashCode();
+    }
+
+    @Override
+    public long __get_dso_UID() {
+        return id;
     }
 }

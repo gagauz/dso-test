@@ -2,11 +2,12 @@ package dso.test;
 
 import dso.DSO;
 import dso.annotation.Shared;
+import dso.object.DSObject;
 
 @Shared
 public class TestServiceWithRoot {
 
-    public static class RootObj {
+    public static class RootObj implements DSObject {
         private String field;
         private String field2;
 
@@ -33,6 +34,11 @@ public class TestServiceWithRoot {
         @Override
         public String toString() {
             return "This is Root object with string field = " + field;
+        }
+
+        @Override
+        public long __get_dso_UID() {
+            return 0;
         }
     }
 
